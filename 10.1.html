@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Часы </title>
+
+<style>
+
+.block{
+  opacity: 1;
+  animation: change 10S forwards;
+}
+
+@-webkit-keyframes change{
+  from {opacity: 1}
+  91%{opacity: 0.9}
+  92%{opacity: 0.8}
+  93%{opacity: 0.7}
+  94%{opacity: 0.6}
+  95%{opacity: 0.5}
+  96%{opacity: 0.4}
+  97%{opacity: 0.3}
+  98%{opacity: 0.2}
+  99%{opacity: 0.1}
+  to {opacity: 0}
+
+
+</style>
+
+<script src="easeljs.js"></script>
+<script type="text/javascript">
+
+function init() {
+canvas = document.getElementById("risunok");
+stage = new createjs.Stage(canvas);
+
+b1 = new createjs.Bitmap("img/ch.png");
+b1.x = 250;  b1.y = -50;
+stage.addChild(b1);
+
+b2 = new createjs.Bitmap("img/a.png");
+b2.x = 350;  b2.y = -250;
+stage.addChild(b2);
+
+b3 = new createjs.Bitmap("img/s.png");
+b3.x = 450;  b3.y = -450;
+stage.addChild(b3);
+
+b4 = new createjs.Bitmap("img/i.png");
+b4.x = 550;  b4.y = -650;
+stage.addChild(b4);
+
+
+createjs.Ticker.addEventListener("tick", function(){
+  if (b1.y < 100) {
+  b1.y +=5;
+  }
+  if (b2.y < 100) {
+  b2.y +=5;
+  }
+  if (b3.y < 100) {
+  b3.y +=5;
+  }
+  if (b4.y < 100) {
+  b4.y +=5;
+  }
+
+  stage.update();
+});
+}
+</script>
+
+
+
+</head>
+
+<body background="img/background.jpg" onload="init();" style=" margin-top:1cm; margin-bottom:1cm; margin-left:10%; margin-right:10%; font-size:24pt; font-weight:bold;">
+<div class="block" align=center>
+<canvas id="risunok" width="1000px" height="200px"> Ваш браузер не поддерживает CANVAS</canvas>
+</div>
+<div class="block">
+<img src="img/clockk.png" alt="часы" style=" margin-left: 250px; ">
+</div>
+</body>
+</html>

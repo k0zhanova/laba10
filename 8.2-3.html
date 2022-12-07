@@ -1,0 +1,43 @@
+<HTML>
+ <meta charset="utf-8">
+ <HEAD>
+	<TITLE>Лотерея</TITLE>
+	<script>
+	 function rand(min, max) {
+  	 let r = min + Math.random() * (max + 1 - min);
+  	 return Math.round(r);
+	 }
+
+	 function pol() {
+  	 let a = [];
+  	 let i = 0,s = 0;
+  	 while (i < 3) {
+  	  i = i + 1;
+  	  a[i] = rand(0,8);
+  	  s = a[i] + s;
+  	  document.getElementById("win").innerHTML += a[i];
+  	  }
+  	 return s;
+	 }
+
+	 function lot() {
+  	 document.getElementById("win").innerHTML = "";
+  	 if (pol() == pol()) alert("Вам повезло!\nДля вас скидка на занятия 50%!!!");
+	 }
+
+	 function reverse() {
+  	 let n = document.getElementById("num").value;
+   	 n = n + "";
+  	 document.getElementById("num").value=n.split("").reverse().join("");
+	 }
+	</script>
+ </HEAD>
+ <BODY>
+	<H4>Лотерея</H4>
+	<input type="button" value="Играть" onClick="lot()">
+	<div id="win"></div> </br><hr>
+	<H4>Перевернуть число</H4>
+	<input type="text" id="num">
+	<input type="button" value="Перевернуть" onClick="reverse()">
+ </BODY>
+</HTML>

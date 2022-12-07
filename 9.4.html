@@ -1,0 +1,22 @@
+<html>
+  <meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+function ttest(st1) {
+return st1.replace(/\s+/g,' ');
+}
+</script>
+<H4>Замена нескольких пробелов</H4>
+<FORM name="form1">
+
+Введите строку: </br><textarea cols=20 rows=7 name=st1></textarea>
+<input type="button" value=Bыпoлнить onClick="form1.res.value=ttest(form1.st1.value)">
+<input type="reset" value=Очистить><hr>
+<textarea cols=20 rows=7 name=res></textarea>
+</FORM>
+
+</body>
+</html>
